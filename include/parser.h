@@ -12,6 +12,11 @@ struct route_table_entry {
 	int interface;
 };
 
+struct arp_table_entry {
+	struct in_addr ip;
+	uint8_t mac[6];
+};
+
 int read_rtable(struct route_table_entry *rtable);
 int number_of_entries();
 void parse_entry(char* entry, struct route_table_entry* table_entry);

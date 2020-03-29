@@ -51,7 +51,7 @@ extern int interfaces[ROUTER_NUM_INTERFACES];
 
 int send_packet(int interface, packet *m);
 int get_packet(packet *m);
-char *get_interface_ip(int interface);
+unsigned long get_interface_ip(int interface);
 int get_interface_mac(int interface, uint8_t *mac);
 void init();
 void parse_arp_table();

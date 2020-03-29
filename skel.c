@@ -70,12 +70,12 @@ int get_packet(packet *m) {
 	return -1;
 }
 
-char *get_interface_ip(int interface)
+unsigned long get_interface_ip(int interface)
 {
 	struct ifreq ifr;
 	sprintf(ifr.ifr_name, "r-%u", interface);
 	ioctl(interfaces[interface], SIOCGIFADDR, &ifr);
-	return inet_ntoa(((struct sockaddr_in *)&ifr.ifr_addr)->sin_addr);
+	return (((struct sockaddr_in *)&ifr.ifr_addr)->sin_addr).s_addr;
 }
 
 int get_interface_mac(int interface, uint8_t *mac)
