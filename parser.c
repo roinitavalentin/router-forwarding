@@ -39,6 +39,9 @@ void parse_entry(char* entry, struct route_table_entry* table_entry) {
     sscanf(entry, "%s %s %s %d", prefix, next_hop, mask, &interface);
     // printf("\nip:%s\nn_h:%s\nmask:%s\nint:%d\n", prefix, next_hop, mask, interface);
     inet_pton(AF_INET, prefix, &(table_entry->prefix));
+    inet_pton(AF_INET, next_hop, &(table_entry->next_hop));
+    inet_pton(AF_INET, mask, &(table_entry->mask));
+
     table_entry->interface = interface;
 }
 
