@@ -21,6 +21,7 @@ int queue_empty(queue q)
   return q -> head == NULL;
 }
 
+// This comment is on feature branch only
 void queue_enq(queue q, void *element)
 {
   if(queue_empty(q))
