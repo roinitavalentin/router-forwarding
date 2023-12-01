@@ -37,7 +37,7 @@ void print_add (u_char* s) {
 	for (int i = 0; i < 6; i++) {
 		printf("%d ", s[i]);
 	}
-	printf("\n");
+	printf("Salut eu sunt Vali\n");
 }
 
 uint32_t ip2int(struct in_addr ip) {
